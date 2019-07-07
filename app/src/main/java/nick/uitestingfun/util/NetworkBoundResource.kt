@@ -17,6 +17,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
     val liveData: LiveData<Resource<ResultType>> get() = _liveData
 
     init {
+        EspressoIdlingResource.increment()
         _liveData.value = Resource.Loading()
         @Suppress("LeakingThis")
         val dbSource = loadFromDb()
@@ -27,6 +28,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
             } else {
                 _liveData.addSource(dbSource) { newData ->
                     setValue(Resource.Success(newData))
+                    EspressoIdlingResource.decrement()
                 }
             }
         }
@@ -54,6 +56,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
                     _liveData.removeSource(dbSource)
                     _liveData.addSource(loadFromDb()) {
                         _liveData.value = Resource.Success(it)
+                        EspressoIdlingResource.decrement()
                     }
                 }
 
@@ -62,6 +65,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
                     _liveData.removeSource(dbSource)
                     _liveData.addSource(dbSource) {
                         _liveData.value = Resource.Error(e, it)
+                        EspressoIdlingResource.decrement()
                     }
                 }
             })
