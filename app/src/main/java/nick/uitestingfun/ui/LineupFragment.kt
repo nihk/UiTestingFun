@@ -46,8 +46,11 @@ class LineupFragment : Fragment() {
                     adapter.submitList(resource.data)
                 }
                 is Resource.Error -> {
-                    error_message.visibility = View.VISIBLE
-                    adapter.submitList(resource.data)
+                    if (resource.data.isNullOrEmpty()) {
+                        error_message.visibility = View.VISIBLE
+                    } else {
+                        adapter.submitList(resource.data)
+                    }
                     Log.e("asdf", "Failed to fetch lineup items", resource.throwable)
                 }
             }

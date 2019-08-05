@@ -7,7 +7,7 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import nick.uitestingfun.*
 import nick.uitestingfun.data.CbcDatabase
-import nick.uitestingfun.data.LineupRepository
+import nick.uitestingfun.data.LineupRepositoryImpl
 import nick.uitestingfun.util.Colors
 import nick.uitestingfun.util.EspressoIdlingResource
 import nick.uitestingfun.util.ServiceLocator
@@ -27,7 +27,7 @@ class LineupFragmentFakeEndToEndTest {
 
     @Before
     fun setUp() {
-        ServiceLocator.lineupRepository = LineupRepository(
+        ServiceLocator.lineupRepository = LineupRepositoryImpl(
             cbcDatabaseRule.database.lineupItemDao(),
             FakeAggregateService
         )

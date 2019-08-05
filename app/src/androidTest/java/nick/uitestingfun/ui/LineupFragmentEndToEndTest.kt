@@ -9,7 +9,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import nick.uitestingfun.*
 import nick.uitestingfun.data.AggregateService
 import nick.uitestingfun.data.CbcDatabase
-import nick.uitestingfun.data.LineupRepository
+import nick.uitestingfun.data.LineupRepositoryImpl
 import nick.uitestingfun.util.EspressoIdlingResource
 import nick.uitestingfun.util.ServiceLocator
 import org.junit.Before
@@ -28,7 +28,7 @@ class LineupFragmentEndToEndTest {
 
     @Before
     fun setUp() {
-        ServiceLocator.lineupRepository = LineupRepository(
+        ServiceLocator.lineupRepository = LineupRepositoryImpl(
             dao = cbcDatabaseRule.database.lineupItemDao(),
             service = ServiceLocator.aggregateService
         )

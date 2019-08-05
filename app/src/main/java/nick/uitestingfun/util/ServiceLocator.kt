@@ -7,6 +7,7 @@ import nick.uitestingfun.App
 import nick.uitestingfun.data.AggregateService
 import nick.uitestingfun.data.CbcDatabase
 import nick.uitestingfun.data.LineupRepository
+import nick.uitestingfun.data.LineupRepositoryImpl
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -28,7 +29,7 @@ object ServiceLocator {
         "cbc_database.db"
     ).build()
 
-    var lineupRepository: LineupRepository = LineupRepository(
+    var lineupRepository: LineupRepository = LineupRepositoryImpl(
         dao = cbcDatabase.lineupItemDao(),
         service = aggregateService
     )
