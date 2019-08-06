@@ -1,4 +1,4 @@
-package nick.uitestingfun
+package nick.uitestingfun.utils
 
 import io.reactivex.Single
 import nick.uitestingfun.data.AggregateService

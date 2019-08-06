@@ -35,4 +35,5 @@ dependencies {
     api "androidx.arch.core:core-testing:2.1.0-rc01"
     api "androidx.room:room-testing:$room_version"
     api "org.mockito:mockito-core:$mockito_version"
+//    api "org.robolectric:robolectric:$robolectric_version"
 }

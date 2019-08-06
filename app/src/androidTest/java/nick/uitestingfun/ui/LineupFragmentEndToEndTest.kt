@@ -12,6 +12,7 @@ import nick.uitestingfun.data.CbcDatabase
 import nick.uitestingfun.data.LineupRepositoryImpl
 import nick.uitestingfun.util.EspressoIdlingResource
 import nick.uitestingfun.util.ServiceLocator
+import nick.uitestingfun.utils.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -41,7 +42,12 @@ class LineupFragmentEndToEndTest {
         onView(withId(R.id.recycler_view)).apply {
             repeat(AggregateService.DEFAULT_PAGE_SIZE) { i ->
                 perform(RecyclerViewActions.scrollToPosition<LineupItemViewHolder>(i))
-                check(matches(atPosition(i, withLineupViewHolderBackgroundColor())))
+                check(matches(
+                    atPosition(
+                        i,
+                        withLineupViewHolderBackgroundColor()
+                    )
+                ))
             }
         }
     }

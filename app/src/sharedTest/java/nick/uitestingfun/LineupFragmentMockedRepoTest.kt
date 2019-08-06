@@ -1,4 +1,4 @@
-package nick.uitestingfun.ui
+package nick.uitestingfun
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.fragment.app.testing.launchFragmentInContainer
@@ -7,13 +7,13 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import nick.uitestingfun.R
-import nick.uitestingfun.atPosition
 import nick.uitestingfun.data.LineupItem
 import nick.uitestingfun.data.LineupRepository
-import nick.uitestingfun.mock
+import nick.uitestingfun.ui.LineupFragment
 import nick.uitestingfun.util.Resource
 import nick.uitestingfun.util.ServiceLocator
+import nick.uitestingfun.utils.atPosition
+import nick.uitestingfun.utils.mock
 import org.hamcrest.Matchers.not
 import org.junit.Before
 import org.junit.Rule

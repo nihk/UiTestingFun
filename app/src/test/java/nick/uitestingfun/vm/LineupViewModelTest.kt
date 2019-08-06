@@ -1,7 +1,7 @@
 package nick.uitestingfun.vm
 
 import nick.uitestingfun.data.LineupRepository
-import nick.uitestingfun.mock
+import nick.uitestingfun.utils.mock
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito.verify

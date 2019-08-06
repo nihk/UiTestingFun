@@ -1,4 +1,4 @@
-package nick.uitestingfun
+package nick.uitestingfun.utils
 
 import org.mockito.Mockito
 

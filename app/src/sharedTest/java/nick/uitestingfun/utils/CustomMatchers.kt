@@ -1,4 +1,4 @@
-package nick.uitestingfun
+package nick.uitestingfun.utils
 
 import android.graphics.drawable.ColorDrawable
 import android.view.View
@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.matcher.BoundedMatcher
+import nick.uitestingfun.R
 import nick.uitestingfun.ui.LineupItemViewHolder
 import org.hamcrest.Description
 import org.hamcrest.Matcher

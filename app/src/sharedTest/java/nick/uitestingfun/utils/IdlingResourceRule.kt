@@ -1,4 +1,4 @@
-package nick.uitestingfun
+package nick.uitestingfun.utils
 
 import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.IdlingResource

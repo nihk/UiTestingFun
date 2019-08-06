@@ -11,6 +11,7 @@ import nick.uitestingfun.data.LineupRepositoryImpl
 import nick.uitestingfun.util.Colors
 import nick.uitestingfun.util.EspressoIdlingResource
 import nick.uitestingfun.util.ServiceLocator
+import nick.uitestingfun.utils.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -39,7 +40,12 @@ class LineupFragmentFakeEndToEndTest {
     fun lineupItemsHaveCorrectText() {
         onView(withId(R.id.recycler_view)).apply {
             repeat(FakeAggregateService.lineupItems.size) { i ->
-                check(matches(atPosition(i, withChild(withText(FakeAggregateService.lineupItems[i].title)))))
+                check(matches(
+                    atPosition(
+                        i,
+                        withChild(withText(FakeAggregateService.lineupItems[i].title))
+                    )
+                ))
             }
         }
     }
@@ -47,13 +53,23 @@ class LineupFragmentFakeEndToEndTest {
     @Test
     fun greaterThanTenWordsHaveGreenBackground() {
         onView(withId(R.id.recycler_view))
-            .check(matches(atPosition(0, withBackgroundColor(Colors.LIGHT_GREEN))))
+            .check(matches(
+                atPosition(
+                    0,
+                    withBackgroundColor(Colors.LIGHT_GREEN)
+                )
+            ))
     }
 
     @Test
     fun tenOrFewerWordsHaveRedBackground() {
         onView(withId(R.id.recycler_view))
-            .check(matches(atPosition(1, withBackgroundColor(Colors.LIGHT_RED))))
+            .check(matches(
+                atPosition(
+                    1,
+                    withBackgroundColor(Colors.LIGHT_RED)
+                )
+            ))
     }
 
     @Test
