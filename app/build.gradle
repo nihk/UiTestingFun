@@ -79,19 +79,11 @@ dependencies {
 
     implementation "androidx.test.espresso:espresso-idling-resource:$espresso_version"
     implementation "androidx.fragment:fragment:$fragment_version"
-    // Once https://issuetracker.google.com/127986458 is fixed these can be androidTestImplementation
+    // Once https://issuetracker.google.com/127986458 is fixed these can be moved to testdependencies module
     implementation "androidx.fragment:fragment-testing:$fragment_version"
     implementation "androidx.test:core:$test_core_version"
-    androidTestImplementation 'junit:junit:4.12'
-    androidTestImplementation "androidx.test:core-ktx:$test_core_version"
-    androidTestImplementation "androidx.test:core-ktx:$test_core_version"
-    androidTestImplementation "androidx.test.ext:junit-ktx:1.1.2-alpha02"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
-    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso_version"
-    androidTestImplementation "androidx.arch.core:core-testing:2.1.0-rc01"
-    androidTestImplementation "androidx.room:room-testing:$room_version"
-    androidTestImplementation "org.mockito:mockito-core:$mockito_version"
+
+    testImplementation project(":testdependencies")
+    androidTestImplementation project(":testdependencies")
     androidTestImplementation "org.mockito:mockito-android:$mockito_version"
-    testImplementation "org.mockito:mockito-core:$mockito_version"
-    testImplementation "org.mockito:mockito-android:$mockito_version"
 }
